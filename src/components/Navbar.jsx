@@ -125,7 +125,7 @@ function Navbar() {
           </LogoText>
 
           {/* Mobile menu button and logo */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
             <IconButton
               size="large"
               aria-label="menu"
@@ -144,9 +144,10 @@ function Navbar() {
               component="a"
               href="#home"
               sx={{
-                ml: 2,
+                ml: 1,
                 display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
+                alignItems: 'center',
               }}
             >
               GENO
@@ -168,7 +169,6 @@ function Navbar() {
             }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
-            sx={{ display: { xs: 'block', md: 'none' } }}
           >
             {pages.map((page) => (
               <MobileMenuItem 

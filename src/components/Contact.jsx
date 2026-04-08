@@ -173,9 +173,11 @@ function Contact() {
                   },
                 }}
               />
-              <ContactButton type="submit">
-                Send Message
-              </ContactButton>
+              <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+                <ContactButton type="submit">
+                  Send Message
+                </ContactButton>
+              </Box>
             </form>
           </Grid>
 

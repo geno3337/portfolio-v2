@@ -108,7 +108,7 @@ function Skills() {
         
         <Grid 
           container 
-          spacing={2} 
+          spacing={{ xs: 1.5, sm: 2 }} 
           sx={{
             justifyContent: 'center'
           }}

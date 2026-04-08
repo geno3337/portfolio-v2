@@ -69,15 +69,18 @@ const NameText = styled(Typography)(({ theme }) => ({
   lineHeight: 1.1,
   marginBottom: theme.spacing(2),
   [theme.breakpoints.down('sm')]: {
-    fontSize: '2.5rem',
+    fontSize: '2rem',
   },
 }));
 
 const DescriptionText = styled(Typography)(({ theme }) => ({
   color: '#8892b0',
-  maxWidth: '540px',
+  // maxWidth: '540px',
   lineHeight: 1.5,
   marginBottom: theme.spacing(3),
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.9rem',
+  }
 }));
 
 function Home() {
@@ -95,10 +98,10 @@ function Home() {
               <NameText variant="h2">
                 Geno A.
               </NameText>
-              <NameText variant="h3" sx={{ color: '#8892b0' }}>
+              <NameText variant="h3" sx={{ color: '#8892b0', fontSize: { xs: '1.75rem', sm: '2rem', md: '3rem' } }}>
                 I build things for the web.
               </NameText>
-              <DescriptionText variant="body1">
+              <DescriptionText variant="body1" >
                 I'm a passionate software engineer specializing in full-stack development.
                 Currently focused on building robust back-end systems using Java, Spring Boot,
                 and MySQL, while also expanding my expertise in modern front-end technologies.

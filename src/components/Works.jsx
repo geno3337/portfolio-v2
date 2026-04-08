@@ -32,7 +32,8 @@ const float = keyframes`
 // Styled components
 const ProjectCard = styled(Paper)(({ theme }) => ({
   position: 'relative',
-  height: '380px',
+  minHeight: '380px',
+  height: '100%',
   overflow: 'hidden',
   borderRadius: '12px',
   boxShadow: '0 10px 30px -15px rgba(2, 12, 27, 0.7)',
@@ -61,7 +62,7 @@ const ProjectOverlay = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: theme.spacing(4),
+  padding: theme.spacing({ xs: 2, sm: 4 }),
   opacity: 0,
   transform: 'translateY(10px)',
   transition: 'all 0.3s ease',
@@ -272,7 +273,7 @@ function Works() {
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: 3,
+                  padding: { xs: 2.5, sm: 3 },
                   background: 'linear-gradient(135deg, #112240 0%, #0a192f 100%)'
                 }}>
                   <ProjectIconWrapper>
@@ -285,6 +286,7 @@ function Works() {
                     sx={{
                       fontFamily: "'Fira Code', monospace",
                       fontWeight: 600,
+                      fontSize: { xs: '1.25rem', md: '1.5rem' },
                       mb: 2
                     }}
                   >
@@ -303,6 +305,7 @@ function Works() {
                     sx={{
                       fontFamily: "'Fira Code', monospace",
                       fontWeight: 600,
+                      fontSize: { xs: '1.25rem', md: '1.5rem' },
                       mb: 2
                     }}
                   >
