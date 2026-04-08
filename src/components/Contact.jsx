@@ -72,14 +72,18 @@ function Contact() {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
 
   // Add all state declarations
-  // const [formData, setFormData] = useState({
-  //   name: '',
-  //   email: '',
-  //   message: ''
-  // });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const formRef = useRef();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
 
   const handleSubmit = (e) => {
@@ -94,9 +98,13 @@ function Contact() {
     )
       .then(() => {
         setSubmitStatus('success');
-        // setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitStatus(null), 5000);
       })
-      .catch(() => setSubmitStatus('error'))
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        setSubmitStatus('error');
+      })
       .finally(() => setIsSubmitting(false));
   };
 
@@ -116,7 +124,10 @@ function Contact() {
             <form ref={formRef} onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
               <TextField
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 fullWidth
+                required
                 label="Name"
                 variant="outlined"
                 margin="normal"
@@ -136,6 +147,10 @@ function Contact() {
               <TextField
                 fullWidth
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                type="email"
                 label="Email"
                 variant="outlined"
                 margin="normal"
@@ -155,6 +170,9 @@ function Contact() {
               <TextField
                 fullWidth
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
                 label="Message"
                 variant="outlined"
                 margin="normal"
@@ -174,9 +192,19 @@ function Contact() {
                 }}
               />
               <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-                <ContactButton type="submit">
-                  Send Message
+                <ContactButton type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </ContactButton>
+                {submitStatus === 'success' && (
+                  <Typography color="#64ffda" sx={{ mt: 2 }}>
+                    Message sent successfully!
+                  </Typography>
+                )}
+                {submitStatus === 'error' && (
+                  <Typography color="error" sx={{ mt: 2 }}>
+                    Failed to send message. Please try again.
+                  </Typography>
+                )}
               </Box>
             </form>
           </Grid>
@@ -189,7 +217,7 @@ function Contact() {
 
               <ContactInfoItem>
                 <EmailIcon sx={{ mr: 2, color: '#64ffda' }} />
-                <Typography>geno.dev7gmail.com</Typography>
+                <Typography>geno.dev7@gmail.com</Typography>
               </ContactInfoItem>
 
               <ContactInfoItem>
