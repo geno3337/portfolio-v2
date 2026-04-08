@@ -6,8 +6,8 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
 import Works from './components/Works';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { lime, purple } from '@mui/material/colors';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import { lime, purple } from '@mui/material/colors';
 import Footer from './components/Footer';
 // import RalewayWoff2 from './fonts/Raleway-Regular.woff2';
 
@@ -47,15 +47,15 @@ function App() {
   return (
     // <ThemeProvider theme={theme}>
     <div >
-    <Navbar/>
-    <Home />
-    <About />
-    <Skills />
-    <Works />
-    <Contact />
-    <Footer/>
-  </div>
-  // </ThemeProvider>
+      <Navbar />
+      <Home />
+      <About />
+      <Skills />
+      <Works />
+      <Contact />
+      <Footer />
+    </div>
+    // </ThemeProvider>
   );
 }
 

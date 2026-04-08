@@ -6,7 +6,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import TwitterIcon from '@mui/icons-material/Twitter';
+// import TwitterIcon from '@mui/icons-material/Twitter';
 import emailjs from 'emailjs-com';
 import { useState, useRef } from 'react';
 
@@ -72,11 +72,11 @@ function Contact() {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
 
   // Add all state declarations
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   message: ''
+  // });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const formRef = useRef();
@@ -94,7 +94,7 @@ function Contact() {
     )
       .then(() => {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        // setFormData({ name: '', email: '', message: '' });
       })
       .catch(() => setSubmitStatus('error'))
       .finally(() => setIsSubmitting(false));

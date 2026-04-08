@@ -10,11 +10,11 @@ import TranslateIcon from '@mui/icons-material/Translate';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import ChatIcon from '@mui/icons-material/Chat';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import GroupWorkIcon from '@mui/icons-material/GroupWork';
-import WorkIcon from '@mui/icons-material/Work';
-import EmailIcon from '@mui/icons-material/Email';
-import EventIcon from '@mui/icons-material/Event';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+// import GroupWorkIcon from '@mui/icons-material/GroupWork';
+// import WorkIcon from '@mui/icons-material/Work';
+// import EmailIcon from '@mui/icons-material/Email';
+// import EventIcon from '@mui/icons-material/Event';
+// import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 
 
 // Animation for project cards
